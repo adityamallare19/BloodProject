@@ -22,42 +22,11 @@
     input[type="text"],
     input[type="number"],
     input[type="email"],
-    input[type="tel"] {
+    input[type="tel"],
+    select {
       height: 35px;
       font-size: 14px;
     }
-
-    .profile-img-container {
-      display: flex;
-      justify-content: center;
-      position : relative;
-    }
-
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      position:relative;
-    }
- 
-    .edit-icon {
-      position: absolute;
-      bottom: 30px;
-      right: 460px;
-      transform: translate(-20%, 20%);
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 5px;
-      cursor: pointer;
-    }
-
-    .edit-icon img {
-      width: 20px;
-      height: 20px;
-    }
-
   </style>
 </head>
 <body>
@@ -67,16 +36,7 @@
         <h2>User Profile</h2>
       </div>
       <div class="card-body">
-        <div class="profile-img-container">
-          <label for="uploadImage">
-            <img id="profileImage" src="https://th.bing.com/th/id/R.178cbb3c76c61ecd020ea82c1abd4376?rik=WEyn5%2foG5nhz0g&riu=http%3a%2f%2ffarm8.staticflickr.com%2f7008%2f6760259075_37af61bc9b_z.jpg&ehk=R%2fbhamG2G%2bi7lKaI%2f6kOtgyLoP8UNziNWMMUVkJYTaM%3d&risl=&pid=ImgRaw&r=0" alt="Profile Picture" class="profile-img mx-auto d-block">
-            <div class="edit-icon">
-              <img src="https://image.freepik.com/free-icon/pencil-striped-symbol-for-interface-edit-buttons_318-50260.jpg" alt="Edit">
-            </div>
-            <input type="file" id="uploadImage" style="display: none;">
-          </label>
-        </div>
-         <form id="profileForm">
+        <form id="profileForm">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" class="form-control form-control-sm" disabled>
@@ -88,10 +48,6 @@
               <option value="female">Female</option>
               <option value="transgender">Transgender</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="text" id="age" class="form-control form-control-sm" maxlength="3" disabled>
           </div>
           <div class="form-group">
             <label for="dob">Date of Birth:</label>
@@ -122,9 +78,9 @@
               <option value="O-">O-</option>
             </select>
           </div>
-          </form>
-          <button type="button" class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
-          <button type="submit" class="btn btn-success mt-2" style="display: none;">Save Changes</button>
+        </form>
+        <button type="button" class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
+        <button type="submit" class="btn btn-success mt-2" style="display: none;">Save Changes</button>
       </div>
     </div>
   </div>
@@ -161,15 +117,6 @@
 
       const editBtn = document.querySelector('.btn-primary');
       editBtn.style.display = 'block';
-    });
-
-    document.getElementById('uploadImage').addEventListener('change', function(event) {
-      const reader = new FileReader();
-      reader.onload = function() {
-        const profileImg = document.getElementById('profileImage');
-        profileImg.src = reader.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
     });
   </script>
 </body>
