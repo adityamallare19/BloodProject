@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <!-- Bootstrap CSS CDN link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url('https://www.shutterstock.com/image-vector/blood-donation-drive-concept-clipart-260nw-1967126311.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="tel"] {
+      height: 35px;
+      font-size: 14px;
+    }
+
+    .profile-img-container {
+      display: flex;
+      justify-content: center;
+      position : relative;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      position:relative;
+    }
+ 
+    .edit-icon {
+      position: absolute;
+      bottom: 30px;
+      right: 460px;
+      transform: translate(-20%, 20%);
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .edit-icon img {
+      width: 20px;
+      height: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2>User Profile</h2>
+      </div>
+      <div class="card-body">
+        <div class="profile-img-container">
+          <label for="uploadImage">
+            <img id="profileImage" src="https://th.bing.com/th/id/R.178cbb3c76c61ecd020ea82c1abd4376?rik=WEyn5%2foG5nhz0g&riu=http%3a%2f%2ffarm8.staticflickr.com%2f7008%2f6760259075_37af61bc9b_z.jpg&ehk=R%2fbhamG2G%2bi7lKaI%2f6kOtgyLoP8UNziNWMMUVkJYTaM%3d&risl=&pid=ImgRaw&r=0" alt="Profile Picture" class="profile-img mx-auto d-block">
+            <div class="edit-icon">
+              <img src="https://image.freepik.com/free-icon/pencil-striped-symbol-for-interface-edit-buttons_318-50260.jpg" alt="Edit">
+            </div>
+            <input type="file" id="uploadImage" style="display: none;">
+          </label>
+        </div>
+         <form id="profileForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="form-control form-control-sm" disabled>
+          </div>
+          <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" class="form-control form-control-sm" disabled>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="transgender">Transgender</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" id="age" class="form-control form-control-sm" maxlength="3" disabled>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" class="form-control" disabled>
+          </div>
+          <div class="form-group">
+            <label for="aadharNumber">Aadhar Number :</label>
+            <input type="text" id="aadharNumber" name="aadharNumber" class="form-control" pattern="\d{4}\s?\d{4}\s?\d{4}" maxlength="14" required disabled>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" disabled>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number :</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" pattern="[0-9]{10}" maxlength="10" required disabled>
+          </div>
+          <div class="form-group">
+            <label for="bloodGroup">Blood Group:</label>
+            <select id="bloodGroup" class="form-control form-control-sm" disabled>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+          </form>
+          <button type="button" class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
+          <button type="submit" class="btn btn-success mt-2" style="display: none;">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery CDN links (required for Bootstrap functionality) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function editProfile() {
+      const formFields = document.querySelectorAll('#profileForm input, #profileForm select');
+      formFields.forEach(field => {
+        field.removeAttribute('disabled');
+      });
+
+      const saveBtn = document.querySelector('.btn-success');
+      saveBtn.style.display = 'block';
+
+      const editBtn = document.querySelector('.btn-primary');
+      editBtn.style.display = 'none';
+    }
+
+    document.getElementById('profileForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formFields = document.querySelectorAll('#profileForm input, #profileForm select');
+      formFields.forEach(field => {
+        field.setAttribute('disabled', 'true');
+      });
+
+      const saveBtn = document.querySelector('.btn-success');
+      saveBtn.style.display = 'none';
+
+      const editBtn = document.querySelector('.btn-primary');
+      editBtn.style.display = 'block';
+    });
+
+    document.getElementById('uploadImage').addEventListener('change', function(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const profileImg = document.getElementById('profileImage');
+        profileImg.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    });
+  </script>
+</body>
+</html>

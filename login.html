@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Bank Login</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/000/654/776/original/blood-donation-charity-cartoons-vector.jpg'); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(5px); /* Adjust the blur effect as needed */
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="text-center mb">Blood Bank Login</h2>
+    <form id="loginForm">
+    <div class="form-group">
+        <label for="userType">Choose user type:</label>
+        <select id="userType" name="userType" class="form-control">
+          <option value="administrator">Administrator</option>
+          <option value="user">User</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-success btn-block">
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get entered username and password
+      var email= document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      // Check username and password (replace these values with your own)
+      var validEmail = "johndoe@gmail.com"; // Replace with your valid email
+      var validPassword = "john"; // Replace with your valid password
+
+      if (email === validEmail && password === validPassword) {
+        // Redirect to another page upon successful login
+        window.location.href = "login entry.html"; // Replace with your desired page
+      } else {
+        // Show an alert for incorrect credentials
+        alert("Incorrect username or password");
+      }
+    });
+  </script>
+
+</body>
+</html>
