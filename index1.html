@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Home Page</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/tooplate-clean-work.css" rel="stylesheet">
+    <!-- Add your custom styles here -->
+    <style>
+        * CSS for Donation Form  */
+            .section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } */
+
+
+#booking {
+	font-family: 'Montserrat', sans-serif;
+	background-image: url(donationform.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+#booking::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(47, 103, 177, 0.6);
+}
+
+.booking-form {
+	background-color: #fff;
+	padding: 50px 20px;
+	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+	background-color: #ebecee;
+	border-radius: 4px;
+	border: none;
+	height: 40px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #3e485c;
+	font-size: 14px;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control::placeholder {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: rgba(62, 72, 92, 0.3);
+	font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	display: inline-block;
+	color: #3e485c;
+	font-weight: 700;
+	margin-bottom: 6px;
+	margin-left: 7px;
+}
+
+.booking-form .submit-btn {
+	display: inline-block;
+	color: #fff;
+	background-color: #1e62d8;
+	font-weight: 700;
+	padding: 14px 30px;
+	border-radius: 4px;
+	border: none;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+	opacity: 0.9;
+}
+
+.booking-cta {
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.booking-cta h1 {
+	font-size: 52px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+}
+
+.booking-cta p {
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.8);
+}
+           
+        /* form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        .prescription-fields, .blood-group-fields {
+            display: none;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        } */
+    
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <!-- <i class="bi-house-fill me-2"></i> -->
+                            Blood Bank Management
+                        </p>
+
+                        <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
+                            <i class="bi-clock-fill me-2"></i>
+                            <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="navbar navbar-expand-lg">
+       <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="blooddrop.jpg" class="logo img-fluid" alt="">
+
+                    <span class="ms-2">Blood Bank Management</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">User Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Admin Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">About</a>
+                        </li>
+
+                        <!-- <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="#">Get started</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section hero-section-full-height d-flex justify-content-center align-items-center">
+            <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-7 col-12 text-center mx-auto">
+                            <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
+                                <span>You Can Donate and Receive</span><span></span>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">Blood</b>
+                                    <b>Plasma</b>
+                                    <b>Platelet</b>
+                                </span>
+                            </h1>
+
+                            <!-- <a class="custom-btn btn button button--atlas smoothscroll me-3" href="#intro-section">
+                                <span>Introduction</span>
+
+                                <div class="marquee" aria-hidden="true">
+                                    <div class="marquee__inner">
+                                        <span>Introduction</span>
+                                        <span>Introduction</span>
+                                        <span>Introduction</span>
+                                        <span>Introduction</span>
+                                    </div>
+                                </div>
+                            </a> -->
+                            <a class="custom-btn custom-border-btn custom-btn-bg-white btn button button--pan smoothscroll" href="#services-section">
+                                <span>Donate</span>
+                            </a>
+
+                            <a class="custom-btn custom-border-btn custom-btn-bg-white btn button button--pan smoothscroll" href="#services-section">
+                                <span>Receive</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L40,229.3C80,235,160,245,240,250.7C320,256,400,256,480,240C560,224,640,192,720,176C800,160,880,160,960,138.7C1040,117,1120,75,1200,80C1280,85,1360,139,1400,165.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+        </section>
+         <div class="col-md-12" style="margin-bottom: 80px;"></div>
+        <!-- Container 1 -->
+        <div class="container">
+            <div class="row justify-content-lg-center align-items-center">
+                 <div class="col-lg-6 col-12">
+                            <h2 class="mb-4">Reliable Blood Bank <br> Service</h2>
+
+                            <p><a href="#">Blood Bank Management</a> is dedicated to saving lives by ensuring a steady and safe supply of blood for those in need. Founded in 2023 , we have been a cornerstone of the community, serving <a rel="nofollow" href="https://worldvectorlogo.com/" target="_blank">WorldVectorLogo</a> across country .</p>
+                            <p>Our mission is to provide high-quality blood and blood products to hospitals and healthcare institutions, thereby contributing to patient care and saving lives through voluntary blood donations.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-12 custom-block-wrap">
+                            <img src="https://th.bing.com/th/id/OIP.FFRH4R0T3AT2n5E1NyYtOgHaE7?rs=1&pid=ImgDetMain" class="img-fluid">
+                        </div>
+
+            </div>
+        </div>
+
+        <!-- Container 2 (White Blood Cells & Red Blood Cells) -->
+        <section class="services-section section-padding section-bg" id="services-section">
+            <div class="container">
+                <div class="row">
+                    <!-- WBC -->
+                    <div class="col-md-6 mb-4">
+                <div class="topic-content">
+                    <h1>White Blood Cells </h1>
+                    <p>During a whole blood donation, one pint of blood is collected. When it is processed in the lab, the blood is separated into 3 components—red blood cells, plasma and platelets. This one pint of blood can save up to three lives. Please allow one hour to complete the entire donation process.</p>
+                    <p>After registration and a mini health check, a whole blood donation takes about 5-10 minutes. Whole blood donors are eligible to give blood every 8 weeks. Donors ages 17 and 18 may donate every 6 months. Eligibility dates for all types of donations are available in the donor portal.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="https://cdn.dribbble.com/users/3475763/screenshots/6340960/image.png" class="img-fluid">
+            </div>
+                    
+              <div class="col-md-12" style="margin-bottom: 100px;"></div>
+               <!-- RBC -->
+                     <div class="col-md-6 mb-4 mt-md-0 mt-4">
+                <img src="https://th.bing.com/th/id/R.49a11f815e404a6687920cf2f1f85a54?rik=XJLxjDAc1c31cw&riu=http%3a%2f%2fwww.interactive-biology.com%2fwp-content%2fuploads%2f2012%2f07%2fRedBloodCells3-1024x819.jpg&ehk=yCzV6PuYG0ee%2bZwV%2f%2b35cZ5UTXyHBKVgSSBJApNEQT4%3d&risl=&pid=ImgRaw&r=0" class="img-fluid">
+            </div>
+            <div class="col-md-6 mb-4 ">
+                <div class="topic-content">
+                    <h1>Red Blood Cells </h1>
+                    <p>A double red blood cell donation is collected through a process called apheresis where red blood cells are collected, and the remaining components (platelets and plasma) are safely returned to the donor. 
+                            It takes about 45 minutes to donate a double unit of red blood cells.</p>
+                    <p>Please allow 60-75 minutes to complete the entire process. Eligibility dates for all types of donations are available in the donor portal. Double red blood cell donors are eligible to donate every 16 weeks. Eligibility dates for all types of donations are available in the donor portal.</p>
+                    <p>Red blood cells travel through your body delivering oxygen. Units of red blood cells are often used in emergency and operating rooms when treating accident victims and during surgeries. Red blood cells are also necessary when treating patients with anemia.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Container 3 (Plasma Donation & Platelet Donation) -->
+        <section class="services-section section-padding section-bg" id="services-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Plasma Donation -->
+                    <div class="col-md-6 mb-4">
+                <div class="topic-content">
+                    <h1>Plasma Donation</h1>
+                    <p>A plasma donation is collected through a process called apheresis where plasma is collected, and the remaining components (platelets and red blood cells) are safely returned to the donor. It takes about 45 minutes to donate plasma. Please allow an hour and a half to complete the entire process. Plasma donors are eligible to donate every 4 weeks.</p>
+                    <p>Plasma donors may be asked to donate a combination of units which may extend donation eligibility. For example, if an individual donates a plasma unit and an RBC unit, your eligibility will vary. Eligibility dates for all types of donations will be posted in the donor portal.</p>
+                    <p>Plasma is the liquid portion of the blood that carries clotting factors and proteins. Plasma is needed to treat burn victims, trauma patients and those battling severe liver disease and cancer. </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="https://th.bing.com/th/id/OIP.Tyy96MKEJHqm1pde0hlb_AHaE7?rs=1&pid=ImgDetMain" class="img-fluid">
+            </div>
+
+
+                     <div class="col-md-12" style="margin-bottom: 100px;"></div>
+                    <!-- Platelet Donation -->
+                     <div class="col-md-6 mb-4">
+                <img src="https://th.bing.com/th/id/OIP.ZBh9N2WG0QtB8JPWWOLzSgHaEK?rs=1&pid=ImgDetMain" class="img-fluid">
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="topic-content">
+                    <h1>Platelet Donation </h1>
+                    <p>A platelet donation is collected through a process called apheresis where platelets are collected, and the remaining components (plasma and red blood cells) are safely returned to the donor. Platelet donation takes 75 to 90 minutes depending on the quantity donated. Please allow about 2 hours for the entire process.</p>
+                    <p>Platelet donors are eligible to donate every seven days, however it is more common to donate every 2 to 4 weeks. Platelet donors may be asked to donate a combination of units which may extend donation eligibility. For example, if an individual donates a single platelet unit, an RBC unit, and a plasma unit, your eligibility will vary. Eligibility dates for all types of donations are available in the donor portal.</p>
+                    <p>Platelets are blood cells that help control bleeding. Patients undergoing bone marrow transplants, surgeries, chemotherapy, radiation or organ transplants often need platelets to survive.Platelets have a very limited shelf life of five days and are delivered quickly to patients that need them.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-12 d-flex align-items-center mb-4 pb-2">
+                <img src="blooddrop.jpg" class="logo img-fluid" alt="">
+                <h5 class="site-footer-title mb-0 ms-3">Our Branches</h5>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="row">
+                    <div class="col-md-4 col-12 mb-4">
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            Chennai
+                        </p>
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone-fill me-2"></i>
+
+                            <a href="tel: 110-220-9800" class="site-footer-link">
+                                110-220-9800
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <i class="bi-envelope-fill me-2"></i>
+
+                            <a href="mailto:info@company.com" class="site-footer-link">
+                                info@company.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-12 mb-4">
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            Banglore
+                        </p>
+                         <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone-fill me-2"></i>
+
+                            <a href="tel: 110-220-9800" class="site-footer-link">
+                                110-220-9800
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <i class="bi-envelope-fill me-2"></i>
+
+                            <a href="mailto:info@company.com" class="site-footer-link">
+                                info@company.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-12 mb-4">
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            Madurai
+                        </p>
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone-fill me-2"></i>
+
+                            <a href="tel: 110-220-9800" class="site-footer-link">
+                                110-220-9800
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <i class="bi-envelope-fill me-2"></i>
+
+                            <a href="mailto:info@company.com" class="site-footer-link">
+                                info@company.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom d-flex justify-content-between align-items-center mt-4">
+            <div class="social-icons d-flex">
+                <!-- Social media icons -->
+                <a href="#" class="social-icon-link button button--skoll me-2">
+                    <span></span>
+                    <span class="bi-twitter"></span>
+                </a>
+                <a href="#" class="social-icon-link button button--skoll me-2">
+                    <span></span>
+                    <span class="bi-facebook"></span>
+                </a>
+                <a href="#" class="social-icon-link button button--skoll me-2">
+                    <span></span>
+                    <span class="bi-instagram"></span>
+                </a>
+                <!-- Add more social media icons if needed -->
+            </div>
+
+            <div class="col-lg-6 col-12 text-lg-end text-center">
+                <p class="copyright-text mb-0">
+                    Copyright © 2036 Blood Bank Management Co., Ltd.
+                </p>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    </footer>
+
+    <!-- JavaScript files -->
+     <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/countdown.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/animated-headline.js"></script>
+        <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
